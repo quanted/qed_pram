@@ -73,13 +73,13 @@ INSTALLED_APPS = (
     #'mod_wsgi.server',  # Only needed for mod_wsgi express (Python driver for Apache) e.g. on the production server
     # 'docs',
     # 'rest_framework_swagger',
-    'cts_app',  # cts django app
-    'cts_app.filters',  # cts filters for pchem table
-    'cts_app.cts_testing',
-    'cts_app.cts_api',
+    #'cts_app',  # cts django app
+    #'cts_app.filters',  # cts filters for pchem table
+    #'cts_app.cts_testing',
+    #'cts_app.cts_api',
     'splash_app',
     'ubertool_app',
-    'hwbi_app',
+    #'hwbi_app',
 )
 
 # This breaks the pattern of a "pluggable" TEST_CTS django app, but it also makes it convenient to describe the server hosting the TEST API.
