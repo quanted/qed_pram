@@ -1,0 +1,15 @@
+[submodule "templates_qed"]
+	path = templates_qed
+	url = https://github.com/quanted/templates_qed.git
+[submodule "static_qed"]
+	path = static_qed
+	url = https://github.com/quanted/static_qed.git
+[submodule "splash_app"]
+	path = splash_app
+	url = https://github.com/quanted/splash_app.git
+[submodule "ubertool_app"]
+	path = ubertool_app
+	url = https://github.com/quanted/ubertool_app.git
+[submodule "ubertool_ecorest"]
+	path = ubertool_ecorest
+	url = https://github.com/quanted/ubertool_ecorest.git
