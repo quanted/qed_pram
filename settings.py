@@ -20,11 +20,10 @@ TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates_qed/') #.replace('\\','/')
 #STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_qed')
 #os.path.join(PROJECT_ROOT, 'templates_qed')
 
-
-
 # cts_api addition:
-NODEJS_HOST = 'nginx'
-NODEJS_PORT = 80
+os.environ.update({'CTS_VERSION': '1.8'})  # keeping CTS version in one place, todo: django var instead
+NODEJS_HOST = 'nginx'  # default nodejs hostname
+NODEJS_PORT = 80  # default nodejs port
 # todo: look into ws w/ django 1.10
 
 IS_PUBLIC = False
@@ -77,6 +76,7 @@ INSTALLED_APPS = (
     'cts_app',  # cts django app
     'cts_app.filters',  # cts filters for pchem table
     'cts_app.cts_testing',
+    'cts_app.cts_api',
     'splash_app',
     'ubertool_app',
     'hwbi_app',
