@@ -13,5 +13,7 @@ redis
 requests
 six
 Sphinx
+sqlalchemy
+sqlalchemy_utils
 tabulate
 xlsxwriter
