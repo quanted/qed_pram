@@ -4,6 +4,7 @@ coverage
 django
 django-parsley
 enum34
+flask-sqlalchemy
 nose
 numpy
 pandas
