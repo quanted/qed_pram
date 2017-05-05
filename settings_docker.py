@@ -8,10 +8,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
-from settings import *
 import os
 import socket
-import sys
+
+from settings import *
 
 print('settings_docker.py')
 
