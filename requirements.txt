@@ -1,7 +1,7 @@
 beautifulsoup4==4.6.0
 celery==4.0.2
 coverage==4.4.1
-django
+django==1.11.2
 django-parsley
 enum34
 flask-sqlalchemy
