@@ -14,7 +14,7 @@ redis==2.10.5
 requests==2.18.1
 six==1.10.0
 Sphinx==1.6.2
-sqlalchemy
+sqlalchemy==1.1.11
 sqlalchemy_utils
 tabulate
 xlsxwriter
