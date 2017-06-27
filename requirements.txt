@@ -2,7 +2,7 @@ beautifulsoup4==4.6.0
 celery==4.0.2
 coverage==4.4.1
 django==1.11.2
-django-parsley
+django-parsley==0.6
 enum34
 flask-sqlalchemy
 nose
