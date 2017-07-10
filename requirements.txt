@@ -1,4 +1,5 @@
-beautifulsoup4==4.6.0
+numba==0.30.1
+xlsxwriterbeautifulsoup4==4.6.0
 celery==4.0.2
 coverage==4.4.1
 django==1.11.2
