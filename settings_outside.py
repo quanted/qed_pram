@@ -58,8 +58,8 @@ try:
     with open('secret_key_django_dropbox.txt') as f:
         SECRET_KEY = f.read().strip()
 except IOError as e:
-
-    SECRET_KEY = 'Shhhhhhhhhhhhhhh'
+    down_low = 'Shhhhhhhhhhhhhhh'
+    SECRET_KEY = down_low
 
 ALLOWED_HOSTS = [
 	'localhost',
