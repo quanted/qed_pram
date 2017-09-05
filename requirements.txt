@@ -14,7 +14,7 @@ redis==2.10.5
 requests==2.18.1
 six==1.10.0
 Sphinx==1.6.3
-sqlalchemy==1.1.11
+sqlalchemy==1.1.14
 sqlalchemy-utils==0.32.14
 tabulate==0.7.7
 xlsxwriter==0.9.8
