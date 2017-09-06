@@ -1,5 +1,5 @@
 beautifulsoup4==4.6.0
-celery==4.0.2
+celery==4.1.0
 coverage==4.4.1
 django==1.11.5
 django-parsley==0.6
