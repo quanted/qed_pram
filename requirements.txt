@@ -1,7 +1,7 @@
 beautifulsoup4==4.6.0
 celery==4.0.2
 coverage==4.4.1
-django==1.11.3
+django==1.11.5
 django-parsley==0.6
 enum34==1.1.6
 flask-sqlalchemy==2.2
@@ -10,11 +10,11 @@ numpy==1.13.1
 pandas==0.20.2
 pillow==4.2.1
 pytz==2017.2
-redis==2.10.5
+redis==2.10.6
 requests==2.18.4
 six==1.10.0
 Sphinx==1.6.3
-sqlalchemy==1.1.11
-sqlalchemy-utils==0.32.14
+sqlalchemy==1.1.14
+sqlalchemy-utils==0.32.16
 tabulate==0.7.7
-xlsxwriter==0.9.8
+xlsxwriter==0.9.9
