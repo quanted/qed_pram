@@ -17,4 +17,4 @@ Sphinx==1.6.3
 sqlalchemy==1.1.11
 sqlalchemy-utils==0.32.14
 tabulate==0.7.7
-xlsxwriter==0.9.8
+xlsxwriter==0.9.9
