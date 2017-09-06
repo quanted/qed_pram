@@ -11,7 +11,7 @@ pandas==0.20.2
 pillow==4.2.1
 pytz==2017.2
 redis==2.10.6
-requests==2.18.1
+requests==2.18.4
 six==1.10.0
 Sphinx==1.6.3
 sqlalchemy==1.1.14
