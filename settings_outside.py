@@ -15,7 +15,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
 from settings import *
 
 print('settings_local.py')
@@ -59,8 +58,8 @@ try:
     with open('secret_key_django_dropbox.txt') as f:
         SECRET_KEY = f.read().strip()
 except IOError as e:
-
-    SECRET_KEY = 'Shhhhhhhhhhhhhhh'
+    down_low = 'Shhhhhhhhhhhhhhh'
+    SECRET_KEY = down_low
 
 ALLOWED_HOSTS = [
 	'localhost',
