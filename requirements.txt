@@ -11,7 +11,7 @@ pillow==4.2.1
 pytz==2017.2
 redis==2.10.6
 requests==2.18.4
-six==1.10.0
+six==1.11.0
 Sphinx==1.6.3
 sqlalchemy==1.1.14
 sqlalchemy-utils==0.32.16
