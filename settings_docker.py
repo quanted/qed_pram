@@ -50,19 +50,18 @@ if not os.environ.get('UBERTOOL_REST_SERVER'):
     
 # SECURITY WARNING: keep the secret key used in production secret!
 try:
-#    SECRET_KEY= os.environ.get('DOCKER_SECRET_KEY')
+    # SECRET_KEY= os.environ.get('DOCKER_SECRET_KEY')
     with open('secret_key_django_dropbox.txt') as f:
         SECRET_KEY = f.read().strip()
-except:
-
-    #SECRET_KEY = 'Shhhhhhhhhhhhhhh'
+except IOError as e:
+    pass
+    # SECRET_KEY = 'Shhhhhhhhhhhhhhh'
 
 try:
     HOSTNAME= os.environ.get('DOCKER_HOSTNAME')
-#    with open('secret_key_django_dropbox.txt') as f:
-#        SECRET_KEY = f.read().strip()
-except:
-
+    # with open('secret_key_django_dropbox.txt') as f:
+    #     SECRET_KEY = f.read().strip()
+except IOError as e:
     HOSTNAME = 'unknown'
 
 #try:
