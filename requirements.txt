@@ -24,7 +24,7 @@ python-coveralls==2.9.1
 pytz==2017.3
 redis==2.10.6
 requests==2.18.4
-scipy==0.19.1
+scipy==1.0.0
 six==1.11.0
 Sphinx==1.6.4
 sqlalchemy==1.1.14
