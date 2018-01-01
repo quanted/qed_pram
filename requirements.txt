@@ -29,5 +29,5 @@ six==1.11.0
 Sphinx==1.6.5
 sqlalchemy==1.2.0
 sqlalchemy-utils==0.32.21
-tabulate==0.8.1
+tabulate==0.8.2
 xlsxwriter==1.0.2
