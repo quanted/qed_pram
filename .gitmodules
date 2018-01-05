@@ -13,3 +13,6 @@
 [submodule "ubertool_ecorest"]
 	path = ubertool_ecorest
 	url = https://github.com/quanted/ubertool_ecorest.git
+[submodule "requirements_qed"]
+	path = requirements_qed
+	url = https://github.com/quanted/requirements_qed.git
