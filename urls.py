@@ -10,6 +10,6 @@ print('qed.urls')
 urlpatterns = [
 	url(r'^', include('splash_app.urls')),
     #url(r'^hwbi/', include('hwbi_app.urls')),
-    url(r'^ubertool/', include('ubertool_app.urls')),
+    url(r'^ubertool', include('ubertool_app.urls')),
     #url(r'^cts/', include('cts_app.urls')),
 ]
