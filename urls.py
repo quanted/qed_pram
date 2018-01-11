@@ -1,7 +1,5 @@
-from django.conf.urls import include, url
-
 # Django 2.0 url import
-from django.urls import path
+from django.urls import include, path
 
 #regular expressions
 # the r in r'^cts/index.html$' indicates that what is inside the quotes is a regular expression
@@ -16,5 +14,5 @@ urlpatterns = [
     #url(r'^ubertool', include('ubertool_app.urls')),
     #django 2.X
     path('', include('splash_app.urls')),
-    path('ubertool', include('ubertool_app.urls')),
+    path('ubertool/', include('ubertool_app.urls')),
 ]
