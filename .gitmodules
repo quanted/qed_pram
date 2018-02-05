@@ -13,3 +13,6 @@
 [submodule "requirements_qed"]
 	path = requirements_qed
 	url = https://github.com/quanted/requirements_qed.git
+[submodule "pram_app"]
+	path = pram_app
+	url = https://github.com/quanted/pram_app.git
