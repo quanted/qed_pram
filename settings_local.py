@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'wsgi_local.application'
 
 # Authentication
 AUTH = False
-LOGIN_URL = '/ubertool/login'
+LOGIN_URL = '/pram/login'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Log to console in Debug mode

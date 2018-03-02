@@ -11,8 +11,8 @@ print('qed.urls')
 urlpatterns = [
     ##django 1.X
 	#url(r'^', include('splash_app.urls')),
-    #url(r'^ubertool', include('ubertool_app.urls')),
+    #url(r'^pram', include('pram_app.urls')),
     #django 2.X
     path('', include('splash_app.urls')),
-    path('ubertool/', include('ubertool_app.urls')),
+    path('pram/', include('pram_app.urls')),
 ]

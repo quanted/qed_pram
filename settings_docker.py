@@ -99,7 +99,7 @@ print("IS_PUBLIC = {}").format(IS_PUBLIC)
 
 # Disable this because Django wants to email errors and there is no email server set up
 # ADMINS = (
-#     ('Ubertool Dev Team', 'ubertool-dev@googlegroups.com')
+#     ('Ubertool Dev Team', 'qed-dev@googlegroups.com')
 # )
 
 
@@ -122,7 +122,7 @@ WSGI_APPLICATION = 'wsgi_docker.application'
 
 # Authentication
 AUTH = True
-LOGIN_URL = '/ubertool/login'
+LOGIN_URL = '/pram/login'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 
