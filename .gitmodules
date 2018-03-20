@@ -16,3 +16,6 @@
 [submodule "pram_app"]
 	path = pram_app
 	url = https://github.com/quanted/pram_app.git
+[submodule "flask_qed"]
+	path = flask_qed
+	url = https://github.com/quanted/flask_qed.git
