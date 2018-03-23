@@ -81,14 +81,14 @@ INSTALLED_APPS = (
     #'cts_app.cts_testing',
     #'cts_app.cts_api',
     'splash_app',
-    'ubertool_app',
+    'pram_app',
     #'hwbi_app',
 )
 
 # This breaks the pattern of a "pluggable" TEST_CTS django app, but it also makes it convenient to describe the server hosting the TEST API.
 TEST_CTS_PROXY_URL = "http://10.0.2.2:7080/"
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
