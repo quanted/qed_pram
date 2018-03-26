@@ -16,6 +16,7 @@ print('settings.py')
 #BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates_qed/') #.replace('\\','/'))
+QAQC_TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'pram_app/pram_qaqc_reports/')
 #STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_qed')
 #os.path.join(PROJECT_ROOT, 'templates_qed')
 
@@ -44,6 +45,7 @@ TEMPLATES = [
                  os.path.join(TEMPLATE_ROOT, 'drupal_2014'),
                  os.path.join(TEMPLATE_ROOT, 'hwbi'),
                  os.path.join(TEMPLATE_ROOT, 'pop'),
+                 os.path.join(TEMPLATE_ROOT, 'pram_qaqc_reports'),
                  os.path.join(TEMPLATE_ROOT, 'sam'),
                  os.path.join(TEMPLATE_ROOT, 'uberqaqc'),
                  os.path.join(TEMPLATE_ROOT, 'uber2017'),
@@ -161,6 +163,7 @@ STATIC_URL = '/static_qed/'
 print('PROJECT_ROOT = %s' %PROJECT_ROOT)
 print('TEMPLATE_ROOT = %s' %TEMPLATE_ROOT)
 #print('STATIC_ROOT = %s' %STATIC_ROOT)
+
 
 # Path to Sphinx HTML Docs
 # http://django-docs.readthedocs.org/en/latest/
