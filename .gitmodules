@@ -19,3 +19,6 @@
 [submodule "temp_config"]
 	path = temp_config
 	url = https://github.com/quanted/temp_config.git
+[submodule "qed_smoketests"]
+	path = qed_smoketests
+	url = https://github.com/quanted/qed_smoketests.git
