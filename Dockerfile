@@ -25,5 +25,4 @@ ENV DJANGO_SETTINGS_MODULE="settings_docker"
 # Add project root to PYTHONPATH (needed to import custom Django settings)
 ENV PYTHONPATH="/src"
 
-# ENTRYPOINT ["sh /src/docker_start.sh"]
 CMD ["sh", "/src/docker_start.sh"]

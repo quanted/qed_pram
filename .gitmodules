@@ -22,3 +22,6 @@
 [submodule "qed_smoketests"]
 	path = qed_smoketests
 	url = https://github.com/quanted/qed_smoketests.git
+[submodule "qed_nginx"]
+	path = qed_nginx
+	url = https://github.com/quanted/qed_nginx

@@ -5,11 +5,6 @@ services:
 
   # QED Django front-end
   qed_django:
-    # build:
-    #  context: .
-    #  dockerfile: Dockerfile
-    #  args:
-    #    version: ${VERSION:-latest}  # passing VERSION env var to Dockerfile as ARG, default = latest
     image: quanted/qed_pram:${VERSION:-latest}  # use qed image w/ tag = VERSION, default = latest
     expose:
       - "8080"
@@ -34,7 +29,6 @@ services:
 
   qed_nginx:
     restart: always
-    # build: ../cts_nginx
     build: ./qed_nginx
     ports:
       - "80:80"
@@ -42,7 +36,6 @@ services:
     links:
       - qed_django:uwsgi_django  # Nginx.conf can reference "qed_django" service with the hostname 'uwsgi' or 'qed_django'
       - qed_flask:uwsgi_flask
-#      - qed_flower:uwsgi_flower
     volumes:
       - /var/www/nginx/certs:/etc/nginx/qed # this points to the keys directory
     volumes_from:
@@ -97,13 +90,3 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
-
-  # Flower container for monitoring celery tasks
-#  qed_flower:
-#    build: ./flask_qed
-#    ports:
-#      - "5555:5555"
-#    entrypoint: flower
-#    command: -A celery_cgi --url_prefix=flower --port=5555 --broker=redis://redis:6379/0
-#    depends_on:
-#      - redis
