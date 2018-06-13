@@ -94,7 +94,8 @@ else:
     #ALLOWED_HOSTS.append('qed.epa.gov')
     IS_PUBLIC = False
 
-print("MACHINE_ID = {}").format(MACHINE_ID)
+# MACHINE_ID is none type, problem with gethostname command
+# print("MACHINE_ID = {}").format(MACHINE_ID)
 print("HOSTNAME = {}").format(HOSTNAME)
 print("IS_PUBLIC = {}").format(IS_PUBLIC)
 
