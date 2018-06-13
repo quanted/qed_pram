@@ -39,8 +39,6 @@ os.environ.update({
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-
-
 if not os.environ.get('UBERTOOL_REST_SERVER'):
     os.environ.update({'UBERTOOL_REST_SERVER': 'http://qed_nginx:7777'})  # Docker network
     print("REST backend = http://qed_nginx:7777")
@@ -95,9 +93,10 @@ else:
     IS_PUBLIC = False
 
 # MACHINE_ID is none type, problem with gethostname command
-# print("MACHINE_ID = {}").format(MACHINE_ID)
-print("HOSTNAME = {}").format(HOSTNAME)
-print("IS_PUBLIC = {}").format(IS_PUBLIC)
+#print("MACHINE_ID = {}").format(MACHINE_ID)
+#print("HOSTNAME = {}").format(HOSTNAME)
+#print("IS_PUBLIC = {}").format(IS_PUBLIC)
+# .format throws NoneType does not contain attribute format
 
 # Disable this because Django wants to email errors and there is no email server set up
 # ADMINS = (

@@ -5,7 +5,12 @@ services:
 
   # QED Django front-end
   qed_django:
-    image: quanted/qed_pram:${VERSION:-dev}  # use qed image w/ tag = VERSION, default = latest
+    build:
+      context: . 
+      dockerfile: Dockerfile
+      args:
+        version: ${VERSION:-latest}
+    #image: quanted/qed_pram:${VERSION:-dev}  # use qed image w/ tag = VERSION, default = latest
     expose:
       - "8080"
     volumes:
