@@ -16,3 +16,8 @@ urlpatterns = [
     path('', include('splash_app.urls')),
     path('pram/', include('pram_app.urls')),
 ]
+
+
+handler404 = 'splash_app.views.landing.page_404'
+handler500 = 'splash_app.views.landing.page_404'
+handler403 = 'splash_app.views.landing.page_404'
