@@ -39,8 +39,6 @@ os.environ.update({
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-
-
 if not os.environ.get('UBERTOOL_REST_SERVER'):
     os.environ.update({'UBERTOOL_REST_SERVER': 'http://qed_nginx:7777'})  # Docker network
     print("REST backend = http://qed_nginx:7777")
@@ -89,13 +87,17 @@ else:
     ALLOWED_HOSTS.append('192.168.99.100')  # Docker Machine IP (generally, when using VirtualBox VM)
     #ALLOWED_HOSTS.append('134.67.114.3')    # CGI NAT address (mapped to 'qed.epa.gov')
     ALLOWED_HOSTS.append('134.67.114.1')
+    ALLOWED_HOSTS.append('134.67.114.7')
+    ALLOWED_HOSTS.append('172.20.100.17')
     ALLOWED_HOSTS.append('qedinternal.epa.gov')
     #ALLOWED_HOSTS.append('qed.epa.gov')
     IS_PUBLIC = False
 
-print("MACHINE_ID = {}").format(MACHINE_ID)
-print("HOSTNAME = {}").format(HOSTNAME)
-print("IS_PUBLIC = {}").format(IS_PUBLIC)
+# MACHINE_ID is none type, problem with gethostname command
+#print("MACHINE_ID = {}").format(MACHINE_ID)
+#print("HOSTNAME = {}").format(HOSTNAME)
+#print("IS_PUBLIC = {}").format(IS_PUBLIC)
+# .format throws NoneType does not contain attribute format
 
 # Disable this because Django wants to email errors and there is no email server set up
 # ADMINS = (

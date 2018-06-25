@@ -44,11 +44,12 @@ TEMPLATES = [
                  os.path.join(TEMPLATE_ROOT, 'drupal_2014'),
                  os.path.join(TEMPLATE_ROOT, 'hwbi'),
                  os.path.join(TEMPLATE_ROOT, 'pop'),
+                 os.path.join(TEMPLATE_ROOT, 'pram_qaqc_reports'),
                  os.path.join(TEMPLATE_ROOT, 'sam'),
                  os.path.join(TEMPLATE_ROOT, 'uberqaqc'),
                  os.path.join(TEMPLATE_ROOT, 'uber2017'),
                  os.path.join(TEMPLATE_ROOT, 'uber2011'),
-
+                 os.path.join("/src", "collected_static"),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -161,6 +162,7 @@ STATIC_URL = '/static_qed/'
 print('PROJECT_ROOT = %s' %PROJECT_ROOT)
 print('TEMPLATE_ROOT = %s' %TEMPLATE_ROOT)
 #print('STATIC_ROOT = %s' %STATIC_ROOT)
+
 
 # Path to Sphinx HTML Docs
 # http://django-docs.readthedocs.org/en/latest/

@@ -1,0 +1,99 @@
+version: '2.1'
+volumes:
+  collected_static: {}
+services:
+
+  # QED Django front-end
+  qed_django:
+    build:
+      context: . 
+      dockerfile: Dockerfile
+      args:
+        version: ${VERSION:-latest}
+    #image: quanted/qed_pram:${VERSION:-dev}  # use qed image w/ tag = VERSION, default = latest
+    expose:
+      - "8080"
+    volumes:
+      - collected_static:/src/collected_static
+      - .:/src  # map qed/ to container's /src for updating w/out rebuilding images
+      - /var/www/qed_static:/src/qed_static_volume
+    environment:
+      - REDIS_HOSTNAME=redis
+      #these echo in the environmental variable to the running docker container
+      #so that is can be picked up by the django settings 
+      - DOCKER_HOSTNAME=${HOSTNAME}
+      #- DOCKER_SECRET_KEY=${SECRET_KEY}
+    links:
+      - redis
+
+  # Redis (message broker)
+  redis:
+    image: redis:latest
+    hostname: redis
+    expose:
+      - "6379"
+
+  qed_nginx:
+    restart: always
+    build: ./qed_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - qed_django:uwsgi_django  # Nginx.conf can reference "qed_django" service with the hostname 'uwsgi' or 'qed_django'
+      - qed_flask:uwsgi_flask
+    volumes:
+      - /var/www/nginx/certs:/etc/nginx/qed # this points to the keys directory
+    volumes_from:
+      - qed_django:ro  # Mount all volumes from "qed_django" to NGINX, so it can access the collected static files
+
+  # flask_qed Flask back-end
+  qed_flask:
+    build: ./flask_qed
+    expose:
+      - "7777"
+    links:
+      - redis
+      - mongodb
+      - qed_celery
+    environment:
+      - REDIS_HOSTNAME=redis
+      - DOCKER_HOSTNAME=${HOSTNAME}
+    volumes:
+      - /var/www/sampreprocessed:/src/pram_flask/ubertool/ubertool/sam/bin/Preprocessed
+      - /var/www/samresults:/src/pram_flask/ubertool/ubertool/sam/bin/Results
+      - /var/www/qed-basins:/src/hms_flask/data/qed-basins
+      - collected_static:/src/collected_static
+    depends_on:
+      - mongodb
+    logging:
+      options:
+        max-size: "200k"
+        max-file: "10"
+
+  # mongoDB database container
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - /var/www/mongodb:/data/db
+    expose:
+      - "27017"
+
+  # Celery container for async task execution
+  qed_celery:
+    build: ./flask_qed
+    volumes:
+      - /var/www/sampreprocessed:/src/pram_flask/ubertool/ubertool/sam/bin/Preprocessed
+      - /var/www/samresults:/src/pram_flask/ubertool/ubertool/sam/bin/Results
+      - /var/www/qed-basins:/src/hms_flask/data/qed-basins
+    links:
+      - redis
+      - mongodb
+    command: celery worker -A celery_cgi -Q qed --loglevel=INFO -c 2 -n qed_worker
+    environment:
+      - REDIS_HOSTNAME=redis
+      - DOCKER_HOSTNAME=${HOSTNAME}
+    logging:
+      options:
+        max-size: "200k"
+        max-file: "10"

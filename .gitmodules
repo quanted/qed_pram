@@ -7,9 +7,6 @@
 [submodule "splash_app"]
 	path = splash_app
 	url = https://github.com/quanted/splash_app.git
-[submodule "ubertool_ecorest"]
-	path = ubertool_ecorest
-	url = https://github.com/quanted/ubertool_ecorest.git
 [submodule "requirements_qed"]
 	path = requirements_qed
 	url = https://github.com/quanted/requirements_qed.git
@@ -19,3 +16,12 @@
 [submodule "flask_qed"]
 	path = flask_qed
 	url = https://github.com/quanted/flask_qed.git
+[submodule "temp_config"]
+	path = temp_config
+	url = https://github.com/quanted/temp_config.git
+[submodule "qed_smoketests"]
+	path = qed_smoketests
+	url = https://github.com/quanted/qed_smoketests.git
+[submodule "qed_nginx"]
+	path = qed_nginx
+	url = https://github.com/quanted/qed_nginx
