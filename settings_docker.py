@@ -88,6 +88,7 @@ else:
     #ALLOWED_HOSTS.append('134.67.114.3')    # CGI NAT address (mapped to 'qed.epa.gov')
     ALLOWED_HOSTS.append('134.67.114.1')
     ALLOWED_HOSTS.append('134.67.114.7')
+    ALLOWED_HOSTS.append('172.20.100.17')
     ALLOWED_HOSTS.append('qedinternal.epa.gov')
     #ALLOWED_HOSTS.append('qed.epa.gov')
     IS_PUBLIC = False

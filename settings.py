@@ -16,7 +16,6 @@ print('settings.py')
 #BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates_qed/') #.replace('\\','/'))
-QAQC_TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'pram_app/pram_qaqc_reports/')
 #STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_qed')
 #os.path.join(PROJECT_ROOT, 'templates_qed')
 
@@ -50,7 +49,7 @@ TEMPLATES = [
                  os.path.join(TEMPLATE_ROOT, 'uberqaqc'),
                  os.path.join(TEMPLATE_ROOT, 'uber2017'),
                  os.path.join(TEMPLATE_ROOT, 'uber2011'),
-
+                 os.path.join("/src", "collected_static"),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
