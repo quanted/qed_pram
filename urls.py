@@ -15,6 +15,7 @@ urlpatterns = [
     #django 2.X
     path('', include('splash_app.urls')),
     path('pram/', include('pram_app.urls')),
+    path('nta/', include('nta_app.urls')),
 ]
 
 

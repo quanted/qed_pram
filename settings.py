@@ -50,6 +50,7 @@ TEMPLATES = [
                  os.path.join(TEMPLATE_ROOT, 'uber2017'),
                  os.path.join(TEMPLATE_ROOT, 'uber2011'),
                  os.path.join("/src", "collected_static"),
+                 os.path.join(TEMPLATE_ROOT, 'nta')
                  ],
         'APP_DIRS': True,
         'OPTIONS': {

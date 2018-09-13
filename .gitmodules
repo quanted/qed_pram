@@ -25,3 +25,6 @@
 [submodule "qed_nginx"]
 	path = qed_nginx
 	url = https://github.com/quanted/qed_nginx
+[submodule "nta_app"]
+	path = nta_app
+	url = https://github.com/quanted/nta_app.git
