@@ -16,7 +16,7 @@ services:
     volumes:
       - collected_static:/src/collected_static
       - .:/src  # map qed/ to container's /src for updating w/out rebuilding images
-      - /var/www/qed_static:/src/qed_static_volume
+      - "../qed_static:/src/qed_static_volume"
     environment:
       - REDIS_HOSTNAME=redis
       #these echo in the environmental variable to the running docker container
@@ -43,7 +43,7 @@ services:
       - qed_django:uwsgi_django  # Nginx.conf can reference "qed_django" service with the hostname 'uwsgi' or 'qed_django'
       - qed_flask:uwsgi_flask
     volumes:
-      - /var/www/nginx/certs:/etc/nginx/qed # this points to the keys directory
+      - "../nginx/certs:/etc/nginx/qed" # this points to the keys directory
     volumes_from:
       - qed_django:ro  # Mount all volumes from "qed_django" to NGINX, so it can access the collected static files
 
@@ -60,9 +60,9 @@ services:
       - REDIS_HOSTNAME=redis
       - DOCKER_HOSTNAME=${HOSTNAME}
     volumes:
-      - /var/www/sampreprocessed:/src/pram_flask/ubertool/ubertool/sam/bin/Preprocessed
-      - /var/www/samresults:/src/pram_flask/ubertool/ubertool/sam/bin/Results
-      - /var/www/qed-basins:/src/hms_flask/data/qed-basins
+      - "../sampreprocessed:/src/pram_flask/ubertool/ubertool/sam/bin/Preprocessed"
+      - "../samresults:/src/pram_flask/ubertool/ubertool/sam/bin/Results"
+      - "../qed-basins:/src/hms_flask/data/qed-basins"
       - collected_static:/src/collected_static
     depends_on:
       - mongodb
@@ -75,7 +75,7 @@ services:
   mongodb:
     image: mongo:latest
     volumes:
-      - /var/www/mongodb:/data/db
+      - "../mongodb:/data/db"
     expose:
       - "27017"
 
@@ -83,9 +83,9 @@ services:
   qed_celery:
     build: ./flask_qed
     volumes:
-      - /var/www/sampreprocessed:/src/pram_flask/ubertool/ubertool/sam/bin/Preprocessed
-      - /var/www/samresults:/src/pram_flask/ubertool/ubertool/sam/bin/Results
-      - /var/www/qed-basins:/src/hms_flask/data/qed-basins
+      - "../sampreprocessed:/src/pram_flask/ubertool/ubertool/sam/bin/Preprocessed"
+      - "../samresults:/src/pram_flask/ubertool/ubertool/sam/bin/Results"
+      - "../qed-basins:/src/hms_flask/data/qed-basins"
     links:
       - redis
       - mongodb
